@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Turf Arena</title>
+    <meta name="description" content="Login to your Turf Arena account.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><i class="fas fa-futbol"></i> Turf<span>Arena</span></a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="slots.html">Available Slots</a></li>
+                <li><a href="booking.html">Book Now</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="login" style="background-color: var(--light-gray); min-height: 70vh; display: flex; align-items: center;">
+            <article class="form-container" style="width: 100%; margin: 0 auto; max-width: 450px;">
+                <div class="text-center" style="margin-bottom: 2rem;">
+                    <i class="fas fa-user-circle text-primary" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                    <h2 style="margin-bottom: 0.5rem;">Welcome Back</h2>
+                    <p style="color: var(--text-light); margin-bottom: 0;">Please enter your details to sign in.</p>
+                </div>
+                
+                <form id="loginForm" novalidate onsubmit="event.preventDefault(); window.location.href='index.html';">
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" class="form-control" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" class="form-control" placeholder="Enter your password" required>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; margin: 0; color: var(--text-light); font-weight: normal;">
+                            <input type="checkbox"> Remember me
+                        </label>
+                        <a href="#" class="text-primary" style="font-weight: 500;">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%;">Sign In</button>
+                    
+                    <div class="text-center" style="margin-top: 1.5rem; font-size: 0.95rem;">
+                        <span style="color: var(--text-light);">Don't have an account?</span> <a href="#" class="text-primary" style="font-weight: 600;">Sign up</a>
+                    </div>
+                </form>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Turf Arena</h3>
+                <p>Your premium destination for booking high-quality sports turfs instantly. Play anytime, anywhere.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="slots.html">Available Slots</a></li>
+                    <li><a href="booking.html">Book Now</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone-alt"></i> +91 9876543210</li>
+                    <li><i class="fas fa-envelope"></i> info@turfarena.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Turf Arena. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
