@@ -7,6 +7,7 @@
     <title>Turf Arena | Online Turf Booking System</title>
     <meta name="description"
         content="Book premium sports turfs online instantly with Turf Arena. Enjoy top-quality football and cricket facilities.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -15,28 +16,33 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="index.html"><i class="fas fa-futbol"></i> Turf<span>Arena</span></a>
+                <a href="#home"><i class="fas fa-futbol"></i> Turf<span>Arena</span></a>
             </div>
             <button class="mobile-menu-btn" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+
+
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="slots.html">Available Slots</a></li>
-                <li><a href="booking.html">Book Now</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about-us">About</a></li>
+                <li><a href="#slots">Available Slots</a></li>
+                <li><a href="#booking">Book Now</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
     </header>
+    <button class="updates" onclick="document.getElementById('myCustomModal').classList.add('active')">
+        Updates
+    </button>
 
     <main>
-        <section class="hero">
+        <section id="home" class="hero">
             <img src="images/hero_turf.png" alt="Premium Artificial Turf at Night" class="hero-bg">
             <div class="hero-overlay"></div>
             <article class="hero-content">
                 <h1>Welcome to Turf Arena</h1>
                 <p>Book Your Favorite Turf Online Instantly</p>
-                <a href="booking.html" class="btn">Book Slot</a>
+                <a href="#booking" class="btn">Book Slot</a>
             </article>
         </section>
 
@@ -44,6 +50,12 @@
             <div class="text-center">
                 <h2 class="section-title">Features</h2>
                 <p class="section-subtitle">Experience the best facilities designed for athletes of all levels.</p>
+                <div style="margin-bottom: 2rem;">
+                    <button id="locationBtn" class="btn">
+                        <i class="fas fa-map-marker-alt"></i> Find Turfs Near Me
+                    </button>
+                    <p id="locationStatus" style="margin-top: 1rem; color: var(--text-light); font-weight: 500;"></p>
+                </div>
             </div>
             <div class="grid grid-3">
                 <article class="card feature-card">
@@ -74,20 +86,20 @@
                     <h3><i class="fas fa-sun text-primary"></i> Morning Slot</h3>
                     <p>Start your day with energy. Perfect for early risers looking to get their daily exercise before
                         work.</p>
-                    <div style="margin-top: 1rem;"><a href="slots.html" class="text-primary"
-                            style="font-weight: 600;">Check availability <i class="fas fa-arrow-right"></i></a></div>
+                    <div style="margin-top: 1rem;"><a href="#slots" class="text-primary" style="font-weight: 600;">Check
+                            availability <i class="fas fa-arrow-right"></i></a></div>
                 </article>
                 <article class="card">
                     <h3><i class="fas fa-cloud-sun text-primary"></i> Afternoon Slot</h3>
                     <p>Beat the afternoon slump with a quick, intense match with friends or colleagues.</p>
-                    <div style="margin-top: 1rem;"><a href="slots.html" class="text-primary"
-                            style="font-weight: 600;">Check availability <i class="fas fa-arrow-right"></i></a></div>
+                    <div style="margin-top: 1rem;"><a href="#slots" class="text-primary" style="font-weight: 600;">Check
+                            availability <i class="fas fa-arrow-right"></i></a></div>
                 </article>
                 <article class="card">
                     <h3><i class="fas fa-moon text-primary"></i> Evening Slot</h3>
                     <p>Play under brilliant floodlights in our most popular, high-energy prime time sessions.</p>
-                    <div style="margin-top: 1rem;"><a href="slots.html" class="text-primary"
-                            style="font-weight: 600;">Check availability <i class="fas fa-arrow-right"></i></a></div>
+                    <div style="margin-top: 1rem;"><a href="#slots" class="text-primary" style="font-weight: 600;">Check
+                            availability <i class="fas fa-arrow-right"></i></a></div>
                 </article>
             </div>
         </section>
@@ -171,6 +183,270 @@
                 </article>
             </div>
         </section>
+        <!-- About Section from about.html -->
+        <section id="about-us">
+            <div class="text-center">
+                <h2 class="section-title">About Turf Arena</h2>
+                <p class="section-subtitle">We bring the best sporting experience straight to you through our digital
+                    platform.</p>
+            </div>
+
+            <div class="grid grid-2" style="align-items: center; gap: 4rem;">
+                <article>
+                    <img src="images/football_turf.png" alt="Premium Football Turf" class="about-image">
+                </article>
+                <article>
+                    <h2 style="font-size: 2rem;">The Purpose of Our Turf Booking System</h2>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-light); font-size: 1.1rem;">Turf Arena was
+                        established with a singular goal: to make premium sports facilities accessible to everyone. Our
+                        platform eliminates the traditional friction of phone calls, manual verifications, and double
+                        bookings.</p>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-light); font-size: 1.1rem;">We provide a
+                        real-time, interactive, and seamless interface where users can view ground availability and lock
+                        in their preferred time slot instantly, ensuring an uninterrupted focus on the game.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="mission-vision" style="background-color: var(--white);">
+            <div class="grid grid-2">
+                <article class="card">
+                    <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                    <h2>Our Mission</h2>
+                    <p style="font-size: 1.2rem;">"Our mission is to simplify sports turf booking."</p>
+                    <p style="margin-top: 1rem;">We aim to connect passionate players with high-quality arenas via
+                        intuitive technology, fostering a community of active and healthy individuals.</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon"><i class="fas fa-eye"></i></div>
+                    <h2>Our Vision</h2>
+                    <p style="font-size: 1.2rem;">"To become the preferred online turf reservation platform."</p>
+                    <p style="margin-top: 1rem;">We envision expanding our digital footprint globally, making Turf Arena
+                        synonymous with accessible sports infrastructure and unparalleled customer convenience.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="facilities">
+            <div class="text-center">
+                <h2 class="section-title">Our Facilities</h2>
+                <p class="section-subtitle">We provide a comprehensive range of amenities to enhance your game.</p>
+            </div>
+
+            <article class="facilities-grid">
+                <div class="facility-item">
+                    <i class="fas fa-futbol" style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent);"></i>
+                    <h4>Football Turf</h4>
+                </div>
+                <div class="facility-item">
+                    <i class="fas fa-baseball-bat-ball"
+                        style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent);"></i>
+                    <h4>Cricket Nets</h4>
+                </div>
+                <div class="facility-item">
+                    <i class="fas fa-lightbulb"
+                        style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent);"></i>
+                    <h4>Flood Lights</h4>
+                </div>
+                <div class="facility-item">
+                    <i class="fas fa-car" style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent);"></i>
+                    <h4>Parking Area</h4>
+                </div>
+                <div class="facility-item">
+                    <i class="fas fa-person-booth"
+                        style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent);"></i>
+                    <h4>Changing Rooms</h4>
+                </div>
+                <div class="facility-item">
+                    <i class="fas fa-tint" style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent);"></i>
+                    <h4>Drinking Water</h4>
+                </div>
+            </article>
+
+            <div style="margin-top: 3rem; text-align: center;">
+                <img src="images/cricket_nets.png" alt="Indoor Cricket Nets" class="about-image"
+                    style="height: 300px; max-width: 800px; display: inline-block;">
+            </div>
+        </section>
+
+        <!-- Slots Section from slots.html -->
+        <section id="slots" style="background-color: var(--white);">
+            <div class="text-center">
+                <h2 class="section-title">Available Slots</h2>
+                <p class="section-subtitle">Real-time schedule for today. Choose your preferred time and proceed to
+                    book.</p>
+            </div>
+
+            <article class="slot-grid">
+                <div class="slot-card available">
+                    <div class="slot-time">6:00 AM - 7:00 AM</div>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-light);">Morning freshness. Ideal for fitness
+                        enthusiasts.</p>
+                    <span class="badge badge-available">Status: Available</span>
+                    <a href="#booking" class="btn"
+                        style="margin-top: 1.5rem; padding: 0.5rem 1.5rem; font-size: 0.9rem;">Book Now</a>
+                </div>
+
+                <div class="slot-card booked">
+                    <div class="slot-time">7:00 AM - 8:00 AM</div>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-light);">Early morning session.</p>
+                    <span class="badge badge-booked">Status: Booked</span>
+                    <button class="btn"
+                        style="margin-top: 1.5rem; padding: 0.5rem 1.5rem; font-size: 0.9rem; background-color: var(--gray); color: var(--text-light) !important; cursor: not-allowed; box-shadow: none;"
+                        disabled>Unavailable</button>
+                </div>
+
+                <div class="slot-card available">
+                    <div class="slot-time">8:00 AM - 9:00 AM</div>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-light);">Perfect pre-work match.</p>
+                    <span class="badge badge-available">Status: Available</span>
+                    <a href="#booking" class="btn"
+                        style="margin-top: 1.5rem; padding: 0.5rem 1.5rem; font-size: 0.9rem;">Book Now</a>
+                </div>
+
+                <div class="slot-card available">
+                    <div class="slot-time">9:00 AM - 10:00 AM</div>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-light);">Mid-morning game.</p>
+                    <span class="badge badge-available">Status: Available</span>
+                    <a href="#booking" class="btn"
+                        style="margin-top: 1.5rem; padding: 0.5rem 1.5rem; font-size: 0.9rem;">Book Now</a>
+                </div>
+
+                <div class="slot-card booked">
+                    <div class="slot-time">10:00 AM - 11:00 AM</div>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-light);">Late morning session.</p>
+                    <span class="badge badge-booked">Status: Booked</span>
+                    <button class="btn"
+                        style="margin-top: 1.5rem; padding: 0.5rem 1.5rem; font-size: 0.9rem; background-color: var(--gray); color: var(--text-light) !important; cursor: not-allowed; box-shadow: none;"
+                        disabled>Unavailable</button>
+                </div>
+
+                <div class="slot-card available">
+                    <div class="slot-time">11:00 AM - 12:00 PM</div>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-light);">Before noon special.</p>
+                    <span class="badge badge-available">Status: Available</span>
+                    <a href="#booking" class="btn"
+                        style="margin-top: 1.5rem; padding: 0.5rem 1.5rem; font-size: 0.9rem;">Book Now</a>
+                </div>
+            </article>
+        </section>
+
+        <!-- Booking Section from booking.html -->
+        <section id="booking">
+            <div class="text-center">
+                <h2 class="section-title">Reserve Your Turf</h2>
+                <p class="section-subtitle">Fill in the details below to instantly confirm your booking.</p>
+            </div>
+
+            <article class="form-container">
+                <form id="bookingForm" novalidate>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your name">
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Mobile Number</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="10-digit mobile number">
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="your.email@example.com">
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Booking Date</label>
+                        <input type="date" id="date" class="form-control">
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="slot">Select Slot</label>
+                        <select id="slot" class="form-control">
+                            <option value="">-- Choose a Time Slot --</option>
+                            <option value="6:00 AM - 7:00 AM">6:00 AM - 7:00 AM</option>
+                            <option value="7:00 AM - 8:00 AM">7:00 AM - 8:00 AM (Booked - Do Not Select)</option>
+                            <option value="8:00 AM - 9:00 AM">8:00 AM - 9:00 AM</option>
+                            <option value="9:00 AM - 10:00 AM">9:00 AM - 10:00 AM</option>
+                        </select>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Confirm Booking</button>
+                </form>
+            </article>
+        </section>
+
+        <!-- Contact Section from contact.html -->
+        <section id="contact" style="background-color: var(--white);">
+            <div class="text-center">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">Have a question or need assistance? We are here to help you.</p>
+            </div>
+
+            <div class="grid grid-2" style="gap: 3rem;">
+                <article class="form-container" style="margin: 0; width: 100%; max-width: 100%;">
+                    <h2 style="margin-bottom: 2rem;">Send us a Message</h2>
+                    <form id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="contactName">Name</label>
+                            <input type="text" id="contactName" class="form-control" placeholder="Your Full Name">
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactEmail">Email</label>
+                            <input type="email" id="contactEmail" class="form-control" placeholder="Your Email Address">
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" class="form-control"
+                                placeholder="How can we help you?"></textarea>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <button type="submit" class="btn" style="margin-top: 1rem;">Send Message</button>
+                    </form>
+                </article>
+
+                <article class="contact-info">
+                    <h2 style="margin-bottom: 2rem;">Contact Information</h2>
+                    <p style="margin-bottom: 2.5rem; color: #ddd;">Reach out to us directly through the following
+                        contact details or visit us at our location.</p>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <h4 style="margin:0; font-family:'Inter', sans-serif;">Phone</h4>
+                            <p style="color: #ddd;">+91 9876543210</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4 style="margin:0; font-family:'Inter', sans-serif;">Email</h4>
+                            <p style="color: #ddd;">info@turfarena.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4 style="margin:0; font-family:'Inter', sans-serif;">Location</h4>
+                            <p style="color: #ddd;">Bangalore, Karnataka</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
     </main>
 
     <footer>
@@ -182,10 +458,10 @@
             <div class="footer-col">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="slots.html">Available Slots</a></li>
-                    <li><a href="booking.html">Book Now</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about-us">About Us</a></li>
+                    <li><a href="#slots">Available Slots</a></li>
+                    <li><a href="#booking">Book Now</a></li>
                     <li><a href="login.html">Login</a></li>
                 </ul>
             </div>
@@ -204,6 +480,18 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <!-- Custom Modal -->
+    <div id="myCustomModal" class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-icon">
+                <i class="fas fa-info-circle"></i>
+            </div>
+            <h3>Important Updates</h3>
+            <p>No Updates.</p>
+            <button class="btn"
+                onclick="document.getElementById('myCustomModal').classList.remove('active')">Close</button>
+        </div>
+    </div>
 </body>
 
 </html>

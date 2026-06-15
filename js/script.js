@@ -74,7 +74,7 @@ const setError = (elementId, message) => {
     if (!element) return;
     const formGroup = element.parentElement;
     const errorDisplay = formGroup.querySelector('.error-message');
-    
+
     formGroup.classList.add('error');
     if (errorDisplay) {
         errorDisplay.innerText = message;
@@ -86,7 +86,7 @@ const setSuccess = (elementId) => {
     if (!element) return;
     const formGroup = element.parentElement;
     const errorDisplay = formGroup.querySelector('.error-message');
-    
+
     formGroup.classList.remove('error');
     if (errorDisplay) {
         errorDisplay.innerText = '';
@@ -216,29 +216,29 @@ function saveBookingData() {
 function showSuccessPopup(title, text) {
     // Create popup elements if they don't exist
     let overlay = document.querySelector('.popup-overlay');
-    
+
     if (!overlay) {
         overlay = document.createElement('div');
         overlay.className = 'popup-overlay';
-        
+
         const content = document.createElement('div');
         content.className = 'popup-content';
-        
+
         const icon = document.createElement('div');
         icon.className = 'popup-icon';
         icon.innerHTML = '<i class="fas fa-check"></i>';
-        
+
         const heading = document.createElement('h3');
         heading.id = 'popupTitle';
-        
+
         const message = document.createElement('p');
         message.id = 'popupText';
-        
+
         const btn = document.createElement('button');
         btn.className = 'btn';
         btn.textContent = 'Awesome!';
         btn.onclick = () => overlay.classList.remove('active');
-        
+
         content.appendChild(icon);
         content.appendChild(heading);
         content.appendChild(message);
@@ -246,12 +246,66 @@ function showSuccessPopup(title, text) {
         overlay.appendChild(content);
         document.body.appendChild(overlay);
     }
-    
+
     document.getElementById('popupTitle').textContent = title;
     document.getElementById('popupText').textContent = text;
-    
+
     // Show popup
     setTimeout(() => {
         overlay.classList.add('active');
     }, 100);
 }
+
+// Geolocation API Implementation
+const locationBtn = document.getElementById('locationBtn');
+const locationStatus = document.getElementById('locationStatus');
+
+if (locationBtn) {
+    locationBtn.addEventListener('click', () => {
+        
+        // 1. Check if the browser actually supports Geolocation
+        if (!navigator.geolocation) {
+            locationStatus.textContent = "Geolocation is not supported by your browser.";
+            return;
+        }
+
+        // 2. Tell the user we are searching
+        locationStatus.textContent = "Locating you...";
+        
+        // 3. Request the location
+        navigator.geolocation.getCurrentPosition(
+            // Success Callback
+            (position) => {
+                const latitude  = position.coords.latitude;
+                const longitude = position.coords.longitude;
+                
+                // We got the coordinates! You can now use them.
+                locationStatus.innerHTML = `
+                    <span style="color: var(--success);">Location found!</span><br>
+                    Latitude: ${latitude.toFixed(4)} <br>
+                    Longitude: ${longitude.toFixed(4)}
+                `;
+            },
+            // Error Callback
+            (error) => {
+                locationStatus.style.color = "var(--error)";
+                switch(error.code) {
+                    case error.PERMISSION_DENIED:
+                        locationStatus.textContent = "You denied the request for Geolocation.";
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        locationStatus.textContent = "Location information is unavailable.";
+                        break;
+                    case error.TIMEOUT:
+                        locationStatus.textContent = "The request to get user location timed out.";
+                        break;
+                    default:
+                        locationStatus.textContent = "An unknown error occurred.";
+                        break;
+                }
+            }
+        );
+    });
+}
+
+
