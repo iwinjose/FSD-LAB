@@ -427,7 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             errorContainer.classList.add('hidden');
             
-            // Local Storage (Self Learning)
+            // Local Storage
             const userData = {
                 name,
                 email,
@@ -441,7 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
             users.push(userData);
             localStorage.setItem('turfUsers', JSON.stringify(users));
 
-            // Arrow function to create display item
+            //function to create display item
             const createDisplayItem = (label, value) => `
                 <div class="flex justify-between items-center py-2 border-b border-slate-50 last:border-0">
                     <span class="text-sm text-slate-500">${label}</span>
